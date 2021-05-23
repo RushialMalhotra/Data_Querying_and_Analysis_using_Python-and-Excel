@@ -1,3 +1,5 @@
+--Viewing both tables before querying
+
 Select *
 From Portfolio_Project..covid_deaths
 order by 1,2
@@ -48,7 +50,7 @@ Group by location
 Order by TotalDeathCount desc
 
 
---Death Count per Continent
+--Looking at Death Count per Continent
 
 Select continent, MAX(cast(total_deaths as int)) as TotalDeathCount
 From Portfolio_Project..covid_deaths
@@ -103,7 +105,7 @@ Select *, (RollingPeopleVaccinated/population)*100
 From PopvsVacc
 
 
---Temp Table
+--Using Temp Table
 
 Drop table if exists #PercentPopulationVaccinated
 Create table #PercentPopulationVaccinated
